@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1571</width>
+    <height>570</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Flowrate</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="9" column="8">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Bias2 (-b2): </string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="6">
+    <widget class="QLabel" name="label_8">
+     <property name="text">
+      <string>Bias1 (-b1):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="7">
+    <widget class="QDoubleSpinBox" name="mult1Value">
+     <property name="decimals">
+      <number>4</number>
+     </property>
+     <property name="minimum">
+      <double>-9999999.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>9999999.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="9" colspan="2">
+    <widget class="QCheckBox" name="fullOutputCheck">
+     <property name="text">
+      <string>Use full output (-fo)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="7">
+    <widget class="QCheckBox" name="graph4Check">
+     <property name="text">
+      <string>Histograms (-g4)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="5" colspan="2">
+    <widget class="QComboBox" name="graph3">
+     <item>
+      <property name="text">
+       <string>None</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>First</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Second</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Both</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="8" column="3">
+    <widget class="QCheckBox" name="graph2Check">
+     <property name="text">
+      <string>Differences (-g2)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="2">
+    <widget class="QCheckBox" name="absDiffCheck">
+     <property name="text">
+      <string>Use absolute differences (-a)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QCheckBox" name="displayGridCheck">
+     <property name="text">
+      <string>Dsiplay grid lines (-d)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="4">
+    <widget class="QLabel" name="label_7">
+     <property name="text">
+      <string>Variables (-g3):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="0">
+    <widget class="QCheckBox" name="corrCheck">
+     <property name="text">
+      <string>Use correlation analysis (-corr)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="2" colspan="2">
+    <widget class="QCheckBox" name="adfCheck">
+     <property name="text">
+      <string>Use augmented Dickey-Fuller test (-adf)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="7">
+    <widget class="QDoubleSpinBox" name="bias1Value">
+     <property name="decimals">
+      <number>4</number>
+     </property>
+     <property name="minimum">
+      <double>-99999999.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>99999999.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="6">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>Multiplier 1 (-m1)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="9" colspan="2">
+    <widget class="QDoubleSpinBox" name="bias2Value">
+     <property name="decimals">
+      <number>4</number>
+     </property>
+     <property name="minimum">
+      <double>-999999999.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>99999999999.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="8">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>Multiplier 2 (-m2)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="9" colspan="2">
+    <widget class="QCheckBox" name="graph5Check">
+     <property name="text">
+      <string>FFT chart (-g5)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QCheckBox" name="graph1Check">
+     <property name="text">
+      <string>Integration (-g1)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="2">
+    <widget class="QCheckBox" name="checkAddGrouping">
+     <property name="text">
+      <string>Add grouping (-ag)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="9" colspan="2">
+    <widget class="QDoubleSpinBox" name="mult2Value">
+     <property name="decimals">
+      <number>4</number>
+     </property>
+     <property name="minimum">
+      <double>-9999999.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>9999999.000000000000000</double>
+     </property>
+     <property name="value">
+      <double>1.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0">
+    <widget class="QCheckBox" name="dtwCheck">
+     <property name="text">
+      <string>Use Dynamic Time Warping (-dtw)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="0" colspan="2">
+    <widget class="QCheckBox" name="ksCheck">
+     <property name="text">
+      <string>Use Kolmogorov-Smirnov test (-ks)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="2">
+    <widget class="QCheckBox" name="wdCheck">
+     <property name="text">
+      <string>Use Wasserstein distance (-wd)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1" colspan="2">
+    <widget class="QDateTimeEdit" name="filterFrom">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy/MM/d hh:mm:ss</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="4">
+    <widget class="QCheckBox" name="filterToCheck">
+     <property name="text">
+      <string>Filter to (-t):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="6">
+    <widget class="QDateTimeEdit" name="filterTo">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="displayFormat">
+      <string>yyyy/MM/d hh:mm:ss</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QCheckBox" name="filterFromCheck">
+     <property name="text">
+      <string>Filter from (-f):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Output CSV (-b):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Input file (-i):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="label_6">
+     <property name="text">
+      <string>Output file (-o):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Flow 1:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1" colspan="8">
+    <widget class="QLineEdit" name="outputFile"/>
+   </item>
+   <item row="0" column="1" colspan="8">
+    <widget class="QLineEdit" name="inputFile">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="10">
+    <widget class="QPushButton" name="selectInputFile">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="10">
+    <widget class="QPushButton" name="selectOutputFile">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="2">
+    <widget class="QCheckBox" name="cointCheck">
+     <property name="text">
+      <string>Use cointegration test (-coint)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="10">
+    <widget class="QPushButton" name="processButton">
+     <property name="text">
+      <string>Proceed</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="9">
+    <widget class="QPushButton" name="exitButton">
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QCheckBox" name="useSingleFlow">
+     <property name="text">
+      <string>Use single flow (-sf)</string>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Flows to use (-fl):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="2">
+    <widget class="QCheckBox" name="isBaseFlowNeeded">
+     <property name="text">
+      <string>Base flow (-bfl)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="3" colspan="4">
+    <widget class="QComboBox" name="baseFlow">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="3" colspan="8">
+    <widget class="QListWidget" name="varList">
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::MultiSelection</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="6">
+    <widget class="QCheckBox" name="checkUseCluster">
+     <property name="text">
+      <string>Cluster data (-cl) with threshold</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="7">
+    <widget class="QSpinBox" name="clusterValue">
+     <property name="maximum">
+      <number>100000000</number>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="8">
+    <widget class="QCheckBox" name="checkClusterGraph">
+     <property name="text">
+      <string>Display cluster charts (-cg)</string>
+     </property>
+    </widget>
+   </item>
+   <item row="12" column="6">
+    <widget class="QPushButton" name="calibrationSetup">
+     <property name="text">
+      <string>Calibration Setup</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1" colspan="3">
+    <widget class="QLineEdit" name="outputTable"/>
+   </item>
+   <item row="5" column="4">
+    <widget class="QPushButton" name="selectOutputTable">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="6">
+    <widget class="QLabel" name="label_11">
+     <property name="text">
+      <string>Config file  (-c):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="10">
+    <widget class="QPushButton" name="selectConfigFile">
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="7" colspan="3">
+    <widget class="QLineEdit" name="configFile"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
