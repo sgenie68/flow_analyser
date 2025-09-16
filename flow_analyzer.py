@@ -244,7 +244,13 @@ def check_match(x,y,freq,dtw=None,use_logistic=True):
 
 def plot1(df,args,index1,index2):
     vars=list(df.columns)
-    fig, axs = plt.subplots(2, sharex=True)
+
+    if not args.detached:
+        fig, axs = plt.subplots(2, sharex=True)
+    else:
+        axs=[0,0]
+        _, axs[0] = plt.subplots()
+        _, axs[1] = plt.subplots()
     
     df["AccTrapezoid"].plot(x=df.index,ax=axs[0],legend=True, linewidth=0.75)
     df["AccSimpson"].plot(x=df.index,ax=axs[0],legend=True, linewidth=0.75)
@@ -270,8 +276,14 @@ def plot1(df,args,index1,index2):
 
 def plot2(df,args,index1,index2):
     vars=list(df.columns)
-    fig, axs = plt.subplots(2, sharex=True)
-    
+
+    if not args.detached:
+        fig, axs = plt.subplots(2, sharex=True)
+    else:
+        axs=[0,0]
+        _, axs[0] = plt.subplots()
+        _, axs[1] = plt.subplots()
+
     df["Diff"].plot(x=df.index,ax=axs[0],legend=True, linewidth=0.75)
     df[vars[index1]].plot(x=df.index,ax=axs[1],legend=True, linewidth=0.75)
     df[vars[index2]].plot(x=df.index,ax=axs[1],legend=True, linewidth=0.75)
@@ -303,10 +315,16 @@ def plot4(df,args,index1,index2):
     cnt=1
     if not index2 is None:
         cnt+=1
-    fig, axs = plt.subplots(cnt, sharex=True)
-    
-    if cnt==1:
-        axs=[axs]
+
+    if True:
+        fig, axs = plt.subplots(cnt, sharex=True)
+        if cnt==1:
+            axs=[axs]
+    else:
+        axs=[0] * cnt
+        for i in range(cnt):
+            _, axs[i] = plt.subplots()
+
     df[vars[index1]].hist(ax=axs[0],legend=True)
     if not index2 is None:
         df[vars[index2]].hist(ax=axs[0],legend=True)
@@ -333,7 +351,12 @@ def DFT(x):
 
 def plot5(df,args,index1,index2):
     vars=list(df.columns)
-    fig, axs = plt.subplots(2, sharex=True)
+    if not args.detached:
+        fig, axs = plt.subplots(2, sharex=True)
+    else:
+        axs=[0,0]
+        _, axs[0] = plt.subplots()
+        _, axs[1] = plt.subplots()
     
     Y=np.fft.fft(df[vars[index1]])
     freq=np.fft.fftfreq(len(df),df['TimeDiff'][1])
@@ -360,7 +383,12 @@ def plot5(df,args,index1,index2):
 
 def plot_cluster(df,args,index1,index2):
     vars=list(df.columns)
-    fig, axs = plt.subplots(2, sharex=True)
+    if not args.detached:
+        fig, axs = plt.subplots(2, sharex=True)
+    else:
+        axs=[0,0]
+        _, axs[0] = plt.subplots()
+        _, axs[1] = plt.subplots()
     
     df[vars[index1]].plot(x=df.index,ax=axs[0],legend=True, linewidth=0.75,label=vars[index1])
     df[vars[index2]].plot(x=df.index,ax=axs[0],legend=True, linewidth=0.75,label=vars[index2])
@@ -446,7 +474,13 @@ def calibrate_and_chart(df,var1,var2,args):
     newdf["Calibration"]=y
     newdf['TimeDiff'] = -newdf['TIME'].diff(-1).dt.total_seconds()
     newdf['TimeDiff'] = newdf['TimeDiff'].fillna(0)
-    fig, axs = plt.subplots(3, sharex=True)
+    if not args.detached:
+        fig, axs = plt.subplots(3, sharex=True)
+    else:
+        axs=[0,0,0]
+        _, axs[0] = plt.subplots()
+        _, axs[1] = plt.subplots()
+        _, axs[2] = plt.subplots()
     if args.synchronize_axis:
         axs[1].sharey(axs[0])
     #Plot integration curve Integral of (Flow2 - Flow1) 
@@ -1226,6 +1260,7 @@ if __name__=="__main__":
     parser.add_argument('--graph3', '-g3', dest='display_charts_3', type=int, default=0, help='Display plot of variables (1,2 or 3(both)')
     parser.add_argument('--graph4', '-g4', dest='display_charts_4', action='store_true', default=0, help='Display histograms')
     parser.add_argument('--graph5', '-g5', dest='display_charts_5', action='store_true', default=0, help='Display FFT plots')
+    parser.add_argument('--detach', '-det', dest='detached', action='store_true', help='Detach all charts')
     parser.add_argument('--grid', '-d', dest='display_grid', action='store_true', help='Display grid lines')
     parser.add_argument('--abs', '-a', dest='abs_value', action='store_true', help='Use absolute difference')
     parser.add_argument('--full_output', '-fo', dest='use_full_output', action='store_true', help='Provide extended output')

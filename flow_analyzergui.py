@@ -60,6 +60,7 @@ class Args:
     useopt=False
     config=None
     calibration_output=None
+    detached = False
 
 class Ui(QtWidgets.QDialog):
     def __init__(self):
@@ -238,6 +239,7 @@ class Ui(QtWidgets.QDialog):
         self.args.use_wd=self.wdCheck.isChecked()
         self.args.use_ks=self.ksCheck.isChecked()
         self.args.use_adf=self.adfCheck.isChecked()
+        self.args.detached=self.checkDetached.isChecked()
         self.args.use_full_output=self.fullOutputCheck.isChecked()
         self.args.use_coint=self.cointCheck.isChecked()
         self.args.use_correlation=self.corrCheck.isChecked()

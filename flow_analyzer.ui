@@ -431,6 +431,13 @@
    <item row="5" column="7" colspan="3">
     <widget class="QLineEdit" name="configFile"/>
    </item>
+   <item row="7" column="8">
+    <widget class="QCheckBox" name="checkDetached">
+     <property name="text">
+      <string>Detached charts</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources/>
