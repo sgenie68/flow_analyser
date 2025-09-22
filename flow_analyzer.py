@@ -524,7 +524,7 @@ def calibrate_and_chart(df,var1,var2,args):
         axs[2].axhline(y=optimal, color='r', linestyle='--', label=f"Optimal: {optimal}")
         newdf["AccTrapezoidModelDiffOpt"].plot(x=newdf.index,ax=axs[1],legend=True, color='red', linewidth=0.75,label=f"Opt Model diff {var2} - {var1} * OptMFactor")
     newdf["AccTrapezoidFlowDiff"].plot(x=newdf.index,ax=axs[0],legend=True, linewidth=0.75,label=f"Integral of flow diff {var2} - {var1}" )
-    newdf["AccTrapezoidModelDiff"].plot(x=newdf.index,ax=axs[1],legend=True, linewidth=0.75,label=f"Integral of Model diff {var2} - {var1} * MFactor")
+    newdf["AccTrapezoidModelDiff"].plot(x=newdf.index,ax=axs[1],legend=True, linewidth=0.75,label=f"Integral of Model diff {var2} - {var1} * OptMFactor")
     if args.uselsq:
         axs[2].plot(newdf.index, fitted_line, color='green', linestyle='--', label=f"Fitted Line: y = {slope:.8f}x + {intercept:.6f}")
         newdf["AccTrapezoidModelDiffLsq"].plot(x=newdf.index,ax=axs[1],legend=True, color='green', linewidth=0.75,label=f"Integral of LSQ Model diff {var2} - {var1} * LSQ")
