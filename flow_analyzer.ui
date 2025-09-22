@@ -434,7 +434,7 @@
    <item row="7" column="8">
     <widget class="QCheckBox" name="checkDetached">
      <property name="text">
-      <string>Detached charts</string>
+      <string>Detached charts (-det)</string>
      </property>
     </widget>
    </item>
